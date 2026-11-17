@@ -234,7 +234,7 @@ public class PixelPaws extends JPanel
     final Rectangle selBack   = new Rectangle(W / 2 - 80, 458, 160, 40);
     final Rectangle selLeft   = new Rectangle(115, 175, 70, 70);
     final Rectangle selRight  = new Rectangle(W - 185, 175, 70, 70);
-    int selectionDragStartX = -1;
+    int selectionDragStartX = -1;                                            // where a drag on the select screen started (-1 = none)
     final Rectangle overTitle = new Rectangle(W / 2 - 120, 120, 240, 50);
     final Rectangle overScore = new Rectangle(W / 2 - 160, 190, 320, 66);
     final Rectangle overAgain = new Rectangle(W / 2 - 120, 330, 240, 52);
@@ -246,6 +246,8 @@ public class PixelPaws extends JPanel
     final Rectangle menuResume = new Rectangle(W / 2 - 110, 385, 220, 48);
 
     // ------------------------------------------------------------ setup
+    // Builds the panel: registers input listeners, loads saved data, and starts
+    // the game timer that runs update() + repaint() about 60 times per second.
     public PixelPaws() {
         setPreferredSize(new Dimension(W, H));
         setFocusable(true);
